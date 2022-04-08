@@ -57,6 +57,9 @@ module.exports = {
 ```
 
 ## 경로 별칭
+```
+$ npm i -D file-loader
+```
 ```js
 webpack.config.js에 작성
 
