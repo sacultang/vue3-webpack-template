@@ -66,10 +66,19 @@ webpack.config.js에 작성
 const path = require('path') //따로 설치 하지 않고 node에서 사용가능한 전역 모듈
 module.exports = {
   resolve :{
-    alias :{
+    alias :{ //경로별칭 해당하는 경로별칭이 지칭하는 곳으로 점프 뜀
       '~':path.resolve(__dirname,'지칭할 경로(src)'),
       'assets':path.resolve(__dirname,'src/assets')
     }
+  },
+  module : {
+    rules:[
+      {
+        test:/\.(png|jpe?g|gif|webp)$/,
+        use:'file-loader // 파일이 정상적으로 해석 됨
+      }
+    ]
+    
   }
 }
 ```
